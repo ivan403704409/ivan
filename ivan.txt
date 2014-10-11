@@ -1,1 +1,40 @@
-ivan modify2, no commit and no add22224443343434343335555
+(function (){
+
+	var Go = {
+
+		init: function (){
+			var self = this;			
+			self._showInfo();
+			setInterval(self._showInfo, 1000);
+		},
+
+		_showInfo : function (){
+			var self = this;
+			var remainTime = self._EndTime() - self._CurTime();	
+			remainTime = Math.ceil(remainTime);
+			console.log(remainTime);
+
+		},
+
+		_EndTime: function (){
+			var res = 0;
+			var oDate = new Date();
+			oDate.setHours(18);
+			oDate.setMinutes(20);
+			oDate.setSeconds(0);
+			res = oDate.getTime();
+
+			return res;
+		},
+
+		_CurTime: function (){
+			var res = 0;
+
+			res = new Date ().getTime()/1000;
+			return res;
+		}
+	};
+
+	Go.init();
+
+})();
